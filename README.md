@@ -27,6 +27,20 @@ simply run
 To inspect your database and create new series (if needed), you can use the
 ``influxdb.sh`` to open an InfluxDB shell.
 
+Configure Grafana
+-----------------
+
+Log-in as administrator and use the menu to add a new datasource. Set these
+options:
+
+* **Type:** InfluxDB
+* **Http Settings / Url:** ``http://influxdb:8086/``
+* **Http Settings / Access:** proxy
+* **InfluxDB / Database:** monitor
+
+You have to enter a username and password, but in this basic setup, these
+are actually ignored by InfluxDB, so it doesn't matter what you enter.
+
 PHP Scripts
 -----------
 

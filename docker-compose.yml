@@ -1,0 +1,19 @@
+grafana:
+  image: grafana/grafana:3.0.4
+  ports:
+    - "127.0.0.1:3000:3000"
+  env_file:
+    - docker-compose.env
+  links:
+    - influxdb
+  volumes:
+    - "grafana_data:/opt/grafana/data"
+    - "grafana_conf:/opt/grafana/conf"
+
+influxdb:
+  image: influxdb:0.13-alpine
+  ports:
+    - "127.0.0.1:8083:8083" # admin API
+    - "127.0.0.1:8086:8086" # regular API
+  volumes:
+    - "influxdb_data:/var/lib/influxdb"

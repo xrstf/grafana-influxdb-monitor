@@ -5,7 +5,12 @@ This repository contains a the needed files to get a super simple logging servic
 for personal use up and running. InfluxDB is used to store the data, Grafana then
 handles fancy dashboards and queries the database from the InfluxDB. A few PHP
 scripts then feed information into the database, triggered by (for example)
-cronjobs.
+crond.
+
+Grafana makes it extremely easy to make yourself some pretty graphs, its InfluxDB
+integration is top-notch.
+
+![Sample Dashboard](https://h.xrstf.de/r/akBVgpLKNIdQlyMwbiKZtJraspyFUFPbPrpTQEyszC/grafana-dashboard.png)
 
 Installation
 ------------
@@ -21,6 +26,12 @@ simply run
 
 To inspect your database and create new series (if needed), you can use the
 ``influxdb.sh`` to open an InfluxDB shell.
+
+PHP Scripts
+-----------
+
+To use the included PHP scripts, you need to run ``composer install`` first to
+install the InfluxDB client library.
 
 License
 -------

@@ -9,6 +9,10 @@ grafana:
   volumes:
     - "grafana_data:/opt/grafana/data"
     - "grafana_conf:/opt/grafana/conf"
+  log_driver: json-file
+  log_opt:
+    max-size: "64k"
+    max-file: "10"
 
 influxdb:
   image: influxdb:0.13-alpine
@@ -17,3 +21,7 @@ influxdb:
     - "127.0.0.1:8086:8086" # regular API
   volumes:
     - "influxdb_data:/var/lib/influxdb"
+  log_driver: json-file
+  log_opt:
+    max-size: "64k"
+    max-file: "10"

@@ -15,10 +15,9 @@ grafana:
     max-file: "10"
 
 influxdb:
-  image: influxdb:0.13-alpine
+  image: influxdb:1.1-alpine
   ports:
-    - "127.0.0.1:8083:8083" # admin API
-    - "127.0.0.1:8086:8086" # regular API
+    - "127.0.0.1:8086:8086"
   volumes:
     - "influxdb_data:/var/lib/influxdb"
   log_driver: json-file
